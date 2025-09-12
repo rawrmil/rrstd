@@ -68,11 +68,11 @@
     } while (0)
 
 #define R_DA_LAST(DA_) (DA_)->buf[(R_ASSERT((DA_)->len > 0), (DA_)->len-1)]
-#define R_DA_REMOVE_INDEX(DA_, i) \
+#define R_DA_REMOVE_INDEX(DA_, I_) \
     do { \
-        size_t j = (i); \
-        R_ASSERT(j < (DA_)->len); \
-        (DA_)->buf[j] = (DA_)->buf[--(DA_)->len]; \
+        size_t j_ = (I_); \
+        R_ASSERT(j_ < (DA_)->len); \
+        (DA_)->buf[j_] = (DA_)->buf[--(DA_)->len]; \
     } while(0)
 
 #define R_DA_FOREACH(TYPE_, IT_, DA_) \
