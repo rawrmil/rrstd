@@ -6,6 +6,8 @@
 // https://github.com/tsoding/nob.h
 // like... A LOT
 
+#include <stdarg.h>
+
 #ifndef R_ASSERT
 #include <assert.h>
 #define R_ASSERT assert
@@ -114,45 +116,5 @@ int R_SB_AppendFormat(R_StringBuilder *sb, const char *fmt, ...) {
 }
 
 #endif
-
-/* TODO: add testing
-
-DA_DEFINE(int, daint_t)
-
-	daint_t da = {0};
-	R_DA_APPEND(&da, 1);
-	R_DA_APPEND(&da, 2);
-	R_DA_APPEND(&da, 3);
-
-	R_DA_FOREACH(int, item, &da)
-		printf("%d ", *item);
-	printf("\n");
-
-	R_DA_APPEND_MANY(&da, ((int[]){4, 5, 6, 7}), 4);
-
-	R_DA_FOREACH(int, item, &da)
-		printf("%d ", *item);
-	printf("\n");
-
-	R_DA_RESIZE(&da, 5);
-
-	R_DA_FOREACH(int, item, &da)
-		printf("%d ", *item);
-	printf("\n");
-
-	printf("%d\n", R_DA_LAST(&da));
-
-	R_DA_FREE(&da);
-
-	////
-
-	R_StringBuilder sb = {0};
-	R_SB_APPEND_CSTR(&sb, "number:");
-	int n = R_SB_AppendFormat(&sb, "%d", 123);
-	printf("string: '%s', appended: %d\n", sb.buf, n);
-	R_SB_AppendFormat(&sb, ", hex: %x", 123);
-	printf("string: '%s'\n", sb.buf, n);
-	R_SB_FREE(&sb);
-*/
 
 #endif /* RRSTD_H */
